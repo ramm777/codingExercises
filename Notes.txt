@@ -1,0 +1,54 @@
+
+# List manipulations
+- [1,2,3,4,5].index(4) => 3. find index of an item.
+- ''.join(myList) => To convert list to string with '' (emptiness) between the items in the list
+- myList.sort(key = lambda x: x[1]) => sort a nested list based on the second item in the sublist
+- sum([1,2,4,10]) => sums your list
+- myList.insert(ind, item)
+- myList.[::-1] => reverses the list, e.g. [1,2,3,4,5][::-1]
+- myList.reverse() => same, reverse thing
+- del myList[ind] => delete indexed item in a list
+- myList.remove(item) => delete item itself in a list
+- [[i, j, k] for i in range(x+1) for j in range(y+1) for k in range(z+1)] => list comprehensions
+- [myList1] + [myList2] => concatenate lists. Alternatively use myList.append([item]).
+- transposed_nested_list = list(map(list, zip(*nested_list))) => Transpose a nested list
+- ind = [i[0] for i in sorted(enumerate(myList), key=lambda x: x[1])] => get indices of sorted list
+
+
+# Strings
+- 'abcd'.isalpha() => string is only alphabetical
+- '1234'.isdigit() => string consits of digits
+- 'abc'.upper() => convert string to the uppercase
+- "1,10,2,13,0".split(',') => will create a list
+- "  banana ".strip() => remove spaces at the beginning and at the end of the string
+- '123456'.replace('6', '', 1) => replace item in a string
+
+# Other
+- any([False, False, True]) => find if any element is True. Can accept 0 and 1
+
+# Print
+- print('Results: %s' % 8) => mixing strings and numbers easy way
+- print('%.2f' % 6) => to print a number up to two decimals => 6.00
+
+# Numpy
+- ind = np.where(a == 0) => find index of an item in array
+- np.flip(array, axis=None) => Reverse the order of elements in an array along the given axis
+- np.reshape(my_array,(dim_x, dim_y))
+- my_array.shape => find the shape of my-array
+- my_array.flatten() => vectorize your matrix
+- np.concatenate((array_1, array_2, array_3))
+- np.concatenate((array_1, array_2, axis=0))
+- my_array.argsort() => get indices of sorted array
+- panda.to_numpy()
+
+# Check what type of the data
+- type(1) == int
+- type(1.12) == float
+
+# Plot
+- plt.yscale("log") => convert to log
+- plt.imshow(data) => good way of visualizing matrices with plt.colourbar
+
+# Dictionaries
+- dict.fromkeys('AAAB') => will create unique letters dictionary, removing duplicates => 'A:None', 'B':None
+- Counter(myList) => calculate occurences of items in list, create a dictionary and remove duplicates. (from collections import Counter)
