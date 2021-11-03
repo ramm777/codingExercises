@@ -196,4 +196,62 @@ def sumANDproduct():
 
 # sumANDproduct()
 
+def minion_game(string):
+    """
+    https://www.hackerrank.com/challenges/the-minion-game/problem?isFullScreen=true
+    Note: this code works well, but takes too much time to execute
+    """
+
+    vowels = ['A','E','I','O','U']
+    consonant =  ['B','C','D','F','G','J','K','L','M','N','P','Q','S','T','V','X','Z']
+
+    words_c = 0
+    words_v = 0
+    for i in range(len(string)):
+        if string[i] in consonant:
+            #for j in range(len(string), i, -1):
+                #words_c.append(string[i:j])
+                #words_c =  words_c + 1
+            words_c = words_c + len(string[i:])
+        if string[i] in vowels:
+            #for j in range(len(string), i, -1):
+                #words_v.append(string[i:j])
+                #words_v =  words_v + 1
+            words_v = words_v + len(string[i:])
+
+    if words_c > words_v:
+        result = 'Stuart' + ' ' + str(words_c)
+    elif words_c < words_v:
+        result = 'Kevin' + ' ' + str(words_v)
+    else:
+        result = 'Draw'
+
+    return print(result)
+
+
+def minion_game1(string):
+    """
+    https://www.hackerrank.com/challenges/the-minion-game/problem?isFullScreen=true
+    Note: this code is optimized and passes the tests
+    """
+    vowels = 'AEIOU'
+
+    words_c = 0
+    words_v = 0
+    for i in range(len(string)):
+        if string[i] in vowels:
+            words_v = words_v + len(string) - i
+        else:
+            words_c = words_c + len(string) - i
+
+    if words_c > words_v:
+        return print('Stuart' + ' ' + str(words_c))
+    elif words_c < words_v:
+        return print('Kevin' + ' ' + str(words_v))
+    else:
+        return print('Draw')
+
+#minion_game1('BANANA')
+#minion_game1('GUAVAISANOTHERFRUIT')
+
 

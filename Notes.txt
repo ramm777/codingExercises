@@ -29,7 +29,8 @@
 # Print
 - print('Results: %s' % 8) => mixing strings and numbers easy way
 - print('%.2f' % 6) => to print a number up to two decimals => 6.00; Alternatively, '%.9f' => print to 9 decimals.
-- print('%.2f' % 6) => to print a number up to two decimals => 6.00; Alternatively, '%.9f' => print to 9 decimals.
+- print(*['jdoe is', 42, 'years old']) => Unpacking. It is effectively the same as calling print() with individual elements of the list.
+
 
 # Numpy
 - ind = np.where(a == 0) => find index of an item in array
@@ -55,3 +56,6 @@
 # Dictionaries
 - dict.fromkeys('AAAB') => will create unique letters dictionary, removing duplicates => 'A:None', 'B':None
 - Counter(myList) => calculate occurences of items in list, create a dictionary and remove duplicates. (from collections import Counter)
+
+# Sets
+- A set is an unordered collection of elements without duplicate entries. Sets are used for membership testing and eliminating duplicate entries.
