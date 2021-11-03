@@ -255,7 +255,8 @@ def movingMedian(arr_given):
 
 #arr = [3, 1, 3, 5, 10, 6, 4, 3, 1]
 #arr = [5, 2, 4, 6]
-arr = [3, 0, 0, -2, 0, 2, 0, -2]
-movingMedian(arr)
+#arr = [3, 0, 0, -2, 0, 2, 0, -2]
+#movingMedian(arr)
+
 
 

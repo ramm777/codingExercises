@@ -173,3 +173,27 @@ def athleteSort1():
 #athleteSort1()
 
 
+import numpy as np
+
+def sumANDproduct():
+    """
+    https://www.hackerrank.com/challenges/np-sum-and-prod/problem?isFullScreen=true
+    """
+
+    sizes = input().split()
+    N, M = int(sizes[0]), int(sizes[1])
+
+    arr = np.zeros((N, M))
+
+    for i in range(N):
+        input_row = [int(x) for x in input().split()]
+        arr[i, :] = input_row.copy()
+
+    sum_vector = np.sum(arr, axis=0)
+    result = np.prod(sum_vector)
+
+    return print(int(result))
+
+# sumANDproduct()
+
+

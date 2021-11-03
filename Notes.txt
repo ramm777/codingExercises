@@ -28,7 +28,8 @@
 
 # Print
 - print('Results: %s' % 8) => mixing strings and numbers easy way
-- print('%.2f' % 6) => to print a number up to two decimals => 6.00
+- print('%.2f' % 6) => to print a number up to two decimals => 6.00; Alternatively, '%.9f' => print to 9 decimals.
+- print('%.2f' % 6) => to print a number up to two decimals => 6.00; Alternatively, '%.9f' => print to 9 decimals.
 
 # Numpy
 - ind = np.where(a == 0) => find index of an item in array
@@ -40,6 +41,8 @@
 - np.concatenate((array_1, array_2, axis=0))
 - my_array.argsort() => get indices of sorted array
 - panda.to_numpy()
+- np.mean, np.std => mean and standard deviation
+
 
 # Check what type of the data
 - type(1) == int
