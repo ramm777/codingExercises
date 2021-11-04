@@ -13,7 +13,9 @@
 - [myList1] + [myList2] => concatenate lists. Alternatively use myList.append([item]).
 - transposed_nested_list = list(map(list, zip(*nested_list))) => Transpose a nested list
 - ind = [i[0] for i in sorted(enumerate(myList), key=lambda x: x[1])] => get indices of sorted list
-
+- list(map(int, ['1', '2'])) => use the map() method to convert all the strings to integers
+- Lists don't have operations such as union, intersection, difference. Use sets in python instead.
+- [x for x in myList if x == 9 ] => find all occurances in a list which meets condition e.g. item == 9.
 
 # Strings
 - 'abcd'.isalpha() => string is only alphabetical
@@ -59,3 +61,15 @@
 
 # Sets
 - A set is an unordered collection of elements without duplicate entries. Sets are used for membership testing and eliminating duplicate entries.
+- myset = {1, 2} => create set
+- myset = set(['a', 'b']) => create a set from a list
+- myset1.union(myset2) => values which exist in both sets
+- myset1.intersection(myset2) => values which exist in myset1 and myset2 OR
+- myset1.intersection(myList) => above also roks with one list in a function
+- myset1.difference(myset2) => values which exist in myset1 but not in myset2
+
+# Terminology
+- immutable => unchanging over time or unable to be changed.
+
+# Other
+- for i, j in zip(range(0,n),range(n,0,-1)) => loop over two ranges.
