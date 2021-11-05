@@ -23,7 +23,9 @@
 - 'abc'.upper() => convert string to the uppercase
 - "1,10,2,13,0".split(',') => will create a list
 - "  banana ".strip() => remove spaces at the beginning and at the end of the string
-- '123456'.replace('6', '', 1) => replace item in a string
+- '123456'.replace('6', '', 1) => replace 1 item in a string. You can replace 2-3 or more items.
+- "A".center(10, '-') => '----A-----', also rjust, ljust
+-  '#'*3 = '###'
 
 # Other
 - any([False, False, True]) => find if any element is True. Can accept 0 and 1
@@ -65,7 +67,7 @@
 - myset = set(['a', 'b']) => create a set from a list
 - myset1.union(myset2) => values which exist in both sets
 - myset1.intersection(myset2) => values which exist in myset1 and myset2 OR
-- myset1.intersection(myList) => above also roks with one list in a function
+- myset1.intersection(myList) => above also works with a list in a function
 - myset1.difference(myset2) => values which exist in myset1 but not in myset2
 
 # Terminology
