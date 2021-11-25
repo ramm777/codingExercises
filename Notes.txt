@@ -54,7 +54,7 @@
 - type(1.12) == float
 
 # Plot
-- plt.yscale("log") => convert to log
+- plt.yscale("log") => convert to log. In subplot, you need to use ax.set_yscale('log'), where ax = fig.add_subplot(121) and fig1 = plt.figure()
 - plt.imshow(data) => good way of visualizing matrices with plt.colourbar
 
 # Dictionaries
@@ -75,3 +75,6 @@
 
 # Other
 - for i, j in zip(range(0,n),range(n,0,-1)) => loop over two ranges.
+
+# Manipulate files
+- f = open("filename.txt", "x") => create a new file
