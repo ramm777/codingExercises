@@ -29,6 +29,10 @@
 
 # Other
 - any([False, False, True]) => find if any element is True. Can accept 0 and 1
+- map() => execute a specified function for each item in an iterable
+- map() example => list(map(np.array, ([1, 2, 3]))) returns [array(1), array(2), array(3)]
+- zip() => reates an iterator that will aggregate elements from two or more iterables. You can use the resulting iterator for e.g. creating dictionaries
+
 
 # Print
 - print('Results: %s' % 8) => mixing strings and numbers easy way
@@ -42,11 +46,14 @@
 - np.reshape(my_array,(dim_x, dim_y))
 - my_array.shape => find the shape of my-array
 - my_array.flatten() => vectorize your matrix
-- np.concatenate((array_1, array_2, array_3))
-- np.concatenate((array_1, array_2, axis=0))
+- np.concatenate( (array_1, array_2, array_3) )
+- np.concatenate( (array_1, array_2), axis=0)
 - my_array.argsort() => get indices of sorted array
 - panda.to_numpy()
 - np.mean, np.std => mean and standard deviation
+- B = B[:, None] => will make np.array vertical vector (if it is a horizontal) 
+=> B = B[0] will reduce ndarray shape from (100,1) to (100, )
+- It's not a good practice to concatinate matrices in a loop, as it's slow. Each time you change the size of the array, it needs to be resized and every element needs to be copied.
 
 
 # Check what type of the data
@@ -60,6 +67,7 @@
 # Dictionaries
 - dict.fromkeys('AAAB') => will create unique letters dictionary, removing duplicates => 'A:None', 'B':None
 - Counter(myList) => calculate occurences of items in list, create a dictionary and remove duplicates. (from collections import Counter)
+- results[key] = value  => create a dictionary based on key and a value. Can do dynamically by looping.
 
 # Sets
 - A set is an unordered collection of elements without duplicate entries. Sets are used for membership testing and eliminating duplicate entries.
@@ -78,3 +86,17 @@
 
 # Manipulate files
 - f = open("filename.txt", "x") => create a new file
+
+# Easy way of subplots: 
+fig, (ax1, ax2) = plt.subplots(1,2) 
+ax1.imshow(Z0)
+ax2.imshow(Z1)
+
+# Easy way of subplots with colorbars
+fig, (ax1, ax2) = plt.subplots(figsize=(15, 6), ncols=2)
+subplot1 = ax1.imshow(doc_words_counts0)
+ax1.title.set_text('New doc_words_counts')
+fig.colorbar(subplot1, ax=ax1)
+subplot2 = ax2.imshow(doc_words_counts[0])
+fig.colorbar(subplot2, ax=ax2)
+ax2.title.set_text('Original doc_words_counts')
