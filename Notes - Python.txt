@@ -16,6 +16,7 @@
 - list(map(int, ['1', '2'])) => use the map() method to convert all the strings to integers
 - Lists don't have operations such as union, intersection, difference. Use sets in python instead.
 - [x for x in myList if x == 9 ] => find all occurances in a list which meets condition e.g. item == 9.
+- set(list1) - set(list2) => see the difference between two lists
 
 # Strings
 - 'abcd'.isalpha() => string is only alphabetical
@@ -41,6 +42,7 @@
 
 
 # Numpy
+- np.delete(arr, ind, axis=) => delete a specific rows/columns in array
 - ind = np.where(a == 0) => find index of an item in array
 - np.flip(array, axis=None) => Reverse the order of elements in an array along the given axis
 - np.reshape(my_array,(dim_x, dim_y))
@@ -52,8 +54,11 @@
 - panda.to_numpy()
 - np.mean, np.std => mean and standard deviation
 - B = B[:, None] => will make np.array vertical vector (if it is a horizontal) 
-=> B = B[0] will reduce ndarray shape from (100,1) to (100, )
+- B = B[0] will reduce ndarray shape from (100,1) to (100, )
 - It's not a good practice to concatinate matrices in a loop, as it's slow. Each time you change the size of the array, it needs to be resized and every element needs to be copied.
+- If you want to pre-allocate numpy matrix so as to pupulate it during loop, your dtype (data type) must be the same in both matrices.
+ E.g. if you are populating matrix with dtype=object, pre-allocate using dtype=object. 
+ I.e. mat_tumour = np.empty((size_y, size_x), dtype=object)
 
 
 # Check what type of the data
@@ -67,7 +72,7 @@
 # Dictionaries
 - dict.fromkeys('AAAB') => will create unique letters dictionary, removing duplicates => 'A:None', 'B':None
 - Counter(myList) => calculate occurences of items in list, create a dictionary and remove duplicates. (from collections import Counter)
-- results[key] = value  => create a dictionary based on key and a value. Can do dynamically by looping.
+- your_dictionary[key] = value  => create a dictionary based on key and a value. Can do dynamically by looping.
 
 # Sets
 - A set is an unordered collection of elements without duplicate entries. Sets are used for membership testing and eliminating duplicate entries.
@@ -100,3 +105,12 @@ fig.colorbar(subplot1, ax=ax1)
 subplot2 = ax2.imshow(doc_words_counts[0])
 fig.colorbar(subplot2, ax=ax2)
 ax2.title.set_text('Original doc_words_counts')
+
+# Matplotlib
+plt.colorbar(shrink=1)
+plt.xscale('log')
+your_figure.savefig("foo.pdf", bbox_inches='tight') => save figure to pdf
+
+
+# Pandas
+pd.get_dummies => Create one hot vectors from the categorical data. Official definition: convert categorical variable into dummy/indicator variables.
