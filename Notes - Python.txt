@@ -7,7 +7,7 @@
 - myList.insert(ind, item)
 - myList.[::-1] => reverses the list, e.g. [1,2,3,4,5][::-1]
 - myList.reverse() => same, reverse thing
-- del myList[ind] => delete indexed item in a list
+- del myList[ind] => delete indexed item in a list. Warning: don't use this in loops!
 - myList.remove(item) => delete item itself in a list
 - [[i, j, k] for i in range(x+1) for j in range(y+1) for k in range(z+1)] => list comprehensions
 - [myList1] + [myList2] => concatenate lists. Alternatively use myList.append([item]).
@@ -17,6 +17,8 @@
 - Lists don't have operations such as union, intersection, difference. Use sets in python instead.
 - [x for x in myList if x == 9 ] => find all occurances in a list which meets condition e.g. item == 9.
 - set(list1) - set(list2) => see the difference between two lists
+- list_no_empty_entries = list(filter(None, list_with_empty_entries))
+
 
 # Strings
 - 'abcd'.isalpha() => string is only alphabetical
@@ -32,7 +34,7 @@
 - any([False, False, True]) => find if any element is True. Can accept 0 and 1
 - map() => execute a specified function for each item in an iterable
 - map() example => list(map(np.array, ([1, 2, 3]))) returns [array(1), array(2), array(3)]
-- zip() => reates an iterator that will aggregate elements from two or more iterables. You can use the resulting iterator for e.g. creating dictionaries
+- zip() => creates an iterator that will aggregate elements from two or more iterables. You can use the resulting iterator for e.g. creating dictionaries
 
 
 # Print
@@ -59,6 +61,7 @@
 - If you want to pre-allocate numpy matrix so as to pupulate it during loop, your dtype (data type) must be the same in both matrices.
  E.g. if you are populating matrix with dtype=object, pre-allocate using dtype=object. 
  I.e. mat_tumour = np.empty((size_y, size_x), dtype=object)
+- np.any() => Test whether any array element along a given axis evaluates to True
 
 
 # Check what type of the data
@@ -88,6 +91,9 @@
 
 # Other
 - for i, j in zip(range(0,n),range(n,0,-1)) => loop over two ranges.
+- _, output = some_function() => this way you can restrict specific output from a function, by using '_'
+- 'i' in locals() => check if variable 'i' exists during running 
+ 
 
 # Manipulate files
 - f = open("filename.txt", "x") => create a new file
@@ -114,3 +120,18 @@ your_figure.savefig("foo.pdf", bbox_inches='tight') => save figure to pdf
 
 # Pandas
 pd.get_dummies => Create one hot vectors from the categorical data. Official definition: convert categorical variable into dummy/indicator variables.
+
+
+# How to duplicate virtualenv
+https://stackoverflow.com/questions/7438681/how-to-duplicate-virtualenv
+
+
+# Pycharm 
+Edit -> find -> find in files => search all files for a keyword.
+
+
+# How to open ".txt" files
+with open('accuracies.txt') as f:
+    lines = f.readlines()
+	
+	
